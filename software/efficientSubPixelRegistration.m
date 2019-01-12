@@ -23,7 +23,7 @@ function efficientSubPixelRegistration(movieData, varargin)
 %
 % Andrew R. Jamieson Feb. 2017
 %
-% Copyright (C) 2018, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2019, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

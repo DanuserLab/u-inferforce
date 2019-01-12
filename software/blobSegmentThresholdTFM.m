@@ -19,7 +19,7 @@ function maskBlobs = blobSegmentThresholdTFM(image,minSize,plotRes,mask)
 %Adapted from blobSegmentThreshold
 %Sangyoon Han 2017
 %
-% Copyright (C) 2018, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2019, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

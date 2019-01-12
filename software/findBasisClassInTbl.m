@@ -5,7 +5,7 @@ function [idBestMatch]=findBasisClassInTbl(basisClassTbl,basisClassIn,xrange,yra
 % 1) Try to find the basis function in the tablebase:                     *
 %**************************************************************************
 %
-% Copyright (C) 2018, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2019, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

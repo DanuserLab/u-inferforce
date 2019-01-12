@@ -2,7 +2,7 @@ function [R,H]=getGramMatrix(forceMesh)
 % this function obtains Gram matrix of the function hi(x) (basis function).
 % Another output is Cholesky factorized matrix (R) of H.
 %
-% Copyright (C) 2018, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2019, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

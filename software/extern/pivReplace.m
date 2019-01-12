@@ -97,7 +97,7 @@ function [pivData] = pivReplace(pivData,pivPar)
 %       Springer 2007
 %   [5] Damien Garcia, smoothn subroutine, http://www.mathworks.com/matlabcentral/fileexchange/274-smooth
 %
-% Copyright (C) 2018, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2019, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

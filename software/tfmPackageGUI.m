@@ -5,7 +5,7 @@ function varargout = tfmPackageGUI(varargin)
 % arguments and returns all output arguments of packageGUI
 %
 %
-% Copyright (C) 2018, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2019, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

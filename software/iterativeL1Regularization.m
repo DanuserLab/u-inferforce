@@ -4,7 +4,7 @@ function mreg=iterativeL1Regularization(G,GTG,d,L,alpha,maxiter,tolx,tolr,doPlot
 % vector d, regularization parameter alpha, semi-norm matrix L.
 % tolx and m_diff are used for convergence criteria
 %
-% Copyright (C) 2018, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2019, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

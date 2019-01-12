@@ -19,7 +19,7 @@ function  [rho,eta,reg_corner,alphas] = calculateLcurveFTTC(grid_mat,u,E,s, clus
 % Sangyoon Han, Oct 2017
     %% set up
 %
-% Copyright (C) 2018, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2019, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

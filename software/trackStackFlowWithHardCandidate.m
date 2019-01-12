@@ -60,7 +60,7 @@ function [v,numTrackedPoints,corLength,sigtValues] = trackStackFlowWithHardCandi
 % References:
 % J. Li & G. Danuser, J. of microscopy, 220 150-167, 2005.
 %
-% Copyright (C) 2018, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2019, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 
