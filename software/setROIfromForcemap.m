@@ -34,12 +34,18 @@ catch
     displProc = tfmPackage.getProcess(2);
 end
 displField=displProc.loadChannelOutput;
-% SDC proc
-try
-    SDCProc = tfmPackage.getProcess(1);
-catch
+% % SDC proc---------------
+% % Lines below commented out and corrected by Waddah Moghram on 2/18/2019
+% try
+%     SDCProc = tfmPackage.getProcess(1);
+% catch
+%     SDCProc = tfmPackage.getProcess(2);
+% end
+SDCProc = tfmPackage.getProcess(1);
+if isempty(SDCProc)                     % No Stage Drift Step was Done
     SDCProc = tfmPackage.getProcess(2);
 end
+%-----------------------
 % Get force map
 % try
 %     tMap = load(forceProc.outFilePaths_{2});
@@ -63,7 +69,10 @@ curDispField=displField(endInd);
 %     tMap = load(forceProc.outFilePaths_{2});
 %     tMap = tMap.tMap;
 % end
-refFrame = double(imread(SDCProc.outFilePaths_{2,1}));
+%---------------- Corrected by Waddah Moghrma. Should be reference frame, not dispMaps.mat on 2/18/2019
+% refFrame = double(imread(SDCProc.outFilePaths_{2,1}));
+refFrame =  imread(SDCProc.funParams_.referenceFramePath);
+%----------------------------------
 
 % Use mask of first frame to filter bead detection
 firstMask = refFrame>0; %false(size(refFrame));
