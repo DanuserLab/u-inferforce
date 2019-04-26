@@ -137,8 +137,8 @@ if feature('ShowFigureWindows'), waitbar(0,wtBar,sprintf(logMsg)); end
 if feature('ShowFigureWindows'),parfor_progress(nFrames); end
 
 outlierThreshold = p.outlierThreshold;
-parfor j= 1:nFrames
-% for j= 1:nFrames
+% parfor j= 1:nFrames
+for j= 1:nFrames
     % Outlier detection
     dispMat = [displField(j).pos displField(j).vec];
     % Take out duplicate points (Sangyoon)
