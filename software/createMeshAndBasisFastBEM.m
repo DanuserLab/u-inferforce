@@ -2,7 +2,7 @@ function [myMesh]=createMeshAndBasisFastBEM(x_vec,y_vec,keepBDPts,basisClassInit
 % to make it very efficient, x_vec and y_vec should be such that they yield
 % a hexagonal lattice.
 %
-% Copyright (C) 2019, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2020, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

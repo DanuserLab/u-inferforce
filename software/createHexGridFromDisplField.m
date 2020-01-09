@@ -8,7 +8,7 @@ function [xvec,yvec]=createHexGridFromDisplField(displField,forceInteger)
 % place the regular grid centered to the orignal bounds. Thereby make sure 
 % that the edges have been eroded to a certain extend.
 %
-% Copyright (C) 2019, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2020, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

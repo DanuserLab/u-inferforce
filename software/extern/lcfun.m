@@ -3,7 +3,7 @@ function g = lcfun(lambda,s,beta,xi,fifth)
 % Auxiliary routine for l_corner; computes the NEGATIVE of the curvature.
 % Note: lambda may be a vector.  PCH, IMM, Jan. 4, 2008.
 %
-% Copyright (C) 2019, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2020, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 
