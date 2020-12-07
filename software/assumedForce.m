@@ -1,19 +1,17 @@
-function copyright = getLCCBCopyright()
-%
-% This is a user-defined function used in UTSW software. 
-% It is called when any GUI is generated. It configures the copyright
-% information.
-%
-% Input: 
-%
-%
-% Output:
-%
-%   copyright - String: copyright and version information
-%
-% Chuangang Ren, 11/2010
-% Sebastien Besson, Feb 2013
-% Andrew Jamieson, Nov 2016 - UTSW
+function [force]=assumedForce(j,x,y)
+xshift=7;
+yshift=7;
+if j==1
+    force=x*0;
+else
+    force=(heaviside(1-((x-xshift).^2+(y-yshift).^2)).*(exp(-((x-xshift).^2+(y-yshift).^2))-1/exp(1)));
+end
+
+% if j==1
+%     force=x*0;
+% else
+%     force=(heaviside(1-(x.^2+y.^2)).*(exp(-(x.^2+y.^2))-1/exp(1)));
+% end
 %
 % Copyright (C) 2020, Danuser Lab - UTSouthwestern 
 %
@@ -33,8 +31,3 @@ function copyright = getLCCBCopyright()
 % along with TFM_Package.  If not, see <http://www.gnu.org/licenses/>.
 % 
 % 
-
-% Set year and version information
-str_year = datestr(date,'YYYY');
-copyright = sprintf('Copyright %s Danuser Lab - UTSouthwestern', str_year);
-% -- TEST CI pipeline deploy to GITHUB -- CI pipeline build # 110674
