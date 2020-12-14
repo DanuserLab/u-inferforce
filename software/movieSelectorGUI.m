@@ -90,7 +90,6 @@ ip.addRequired('handles',@isstruct);
 ip.addParameter('packageName','',@ischar);
 ip.addParameter('MD', MovieData.empty(1,0) ,@(x) isempty(x) || isa(x,'MovieData'));
 ip.addParameter('ML', MovieList.empty(1,0), @(x) isempty(x) || isa(x,'MovieList'));
-ip.addParameter('ImD', ImageData.empty(1,0) ,@(x) isempty(x) || isa(x,'ImageData'));
 ip.addParameter('cluster',[],@(x) isempty(x) || isa(x,'parallel.Cluster'));
 ip.parse(hObject,eventdata,handles,varargin{:});
 
@@ -104,7 +103,6 @@ handles.output = hObject;
 % other user data set-up
 userData.MD = MovieData.empty(1,0);
 userData.ML = MovieList.empty(1,0);
-userData.ImD = ImageData.empty(1,0);
 userData.userDir = pwd;
 userData.newFig=-1;
 userData.msgboxGUI=-1;
@@ -162,11 +160,6 @@ if ~isempty(ip.Results.MD)
     userData.MD = horzcat(userData.MD,ip.Results.MD);
 end
 
-% Populate images to analyze
-if ~isempty(ip.Results.ImD)
-    userData.ImD = horzcat(userData.ImD,ip.Results.ImD);
-end
-
 % Set uTrackParCluster
 if(~isempty(ip.Results.cluster))
     uTrackParCluster(ip.Results.cluster);
@@ -179,10 +172,6 @@ userData.MD = userData.MD(sort(index));
 % Filter movie lists to get a unique list
 [~,index] = unique(arrayfun(@getFullPath,userData.ML,'Unif',0));
 userData.ML = userData.ML(sort(index));
-
-% Filter images to get a unique list
-[~,index] = unique(arrayfun(@getFullPath,userData.ImD,'Unif',0));
-userData.ImD = userData.ImD(sort(index));
 
 supermap(1,:) = get(hObject,'color');
 
@@ -220,8 +209,6 @@ packageList = {
     'MaskQuantPackage'
     'Morphology3DPackage'
     'XcorrFluctuationPackage'
-    'NewUTrack3DPackage'
-    'FishATLASPackage'
     };
 validPackage = cellfun(@(x) exist(x,'class')==8,packageList);
 packageList = packageList(validPackage);
@@ -258,12 +245,9 @@ class = eval([selectedPackage '.getMovieClass()']);
 if strcmp(class, 'MovieList')
     type = 'movie list';
     field = 'ML';
-elseif strcmp(class, 'MovieData')
+else
     type = 'movie';
     field = 'MD'; 
-elseif strcmp(class, 'ImageData')
-    type = 'imageData';
-    field = 'ImD'; 
 end
   
 if isempty(userData.(field))
@@ -273,7 +257,7 @@ end
 
 close(handles.figure1);
 packageGUI(selectedPackage,userData.(field),...
-    'MD', userData.MD, 'ML', userData.ML, 'ImD', userData.ImD, 'cluster', uTrackParCluster);
+    'MD', userData.MD, 'ML', userData.ML, 'cluster', uTrackParCluster);
 
 % --- Executes on selection change in listbox_movie.
 function listbox_movie_Callback(hObject, eventdata, handles)
@@ -289,44 +273,30 @@ if ishandle(userData.newFig), delete(userData.newFig); end
 userData.newFig = movieDataGUI('mainFig',handles.figure1);
 set(handles.figure1,'UserData',userData);
 
-% --- Executes on button press in pushbutton_new.
-function pushbutton_newImD_Callback(hObject, eventdata, handles)
-
-userData = get(handles.figure1, 'UserData');
-% if imageDataGUI exist, delete it
-if ishandle(userData.newFig), delete(userData.newFig); end
-userData.newFig = imageDataGUI('mainFig',handles.figure1);
-set(handles.figure1,'UserData',userData);
-
 % --- Executes on button press in pushbutton_prepare.
 function pushbutton_prepare_Callback(hObject, eventdata, handles)
 
 userData = get(handles.figure1, 'UserData');
 % if preparation GUI exist, delete it
 if ishandle(userData.newFig), delete(userData.newFig); end
-if ~isempty(userData.MD) && isempty(userData.ImD)
 userData.newFig = dataPreparationGUI('mainFig',handles.figure1);
-end
 set(handles.figure1,'UserData',userData);
 
 % --- Executes on button press in pushbutton_delete.
 function pushbutton_delete_Callback(hObject, eventdata, handles)
 
 userData = get(handles.figure1, 'Userdata');
-if isempty(userData.MD) && isempty(userData.ImD), return;end
+if isempty(userData.MD), return;end
 
 % Delete channel object
 num = get(handles.listbox_movie,'Value');
-if ~isempty(userData.MD) && isempty(userData.ImD)
 removedMovie=userData.MD(num);
 userData.MD(num) = [];
 
 % Test if movie does not share common ancestor
 checkCommonAncestor= arrayfun(@(x) any(isequal(removedMovie.getAncestor,x.getAncestor)),userData.MD);
 if ~any(checkCommonAncestor), delete(removedMovie); end
-elseif isempty(userData.MD) && ~isempty(userData.ImD)
-    userData.ImD(num) = [];
-end
+
 % Refresh listbox_channel
 set(handles.figure1, 'Userdata', userData)
 refreshDisplay(hObject,eventdata,handles);
@@ -340,12 +310,8 @@ props=get(handles.listbox_movie, {'String','Value'});
 if isempty(props{1}), return; end
 
 userData = get(handles.figure1, 'UserData');
-if ~isempty(userData.MD) && isempty(userData.ImD)
 % if movieDataGUI exist, delete it
 userData.newFig = movieDataGUI(userData.MD(props{2}));
-elseif isempty(userData.MD) && ~isempty(userData.ImD)
-    userData.newFig = imageDataGUI(userData.ImD(props{2}));
-end
 set(handles.figure1,'UserData',userData);
 
 % --- Executes during object deletion, before destroying properties.
@@ -377,29 +343,16 @@ if any(strcmp([pathname filename], moviePaths))
 end
 
 try
-    ImDOrMD = load([pathname filename]);
     % Add option for user to choose to do sanityCheck or not (updated 2019-04)
     if get(handles.checkbox_sanityCheckMD, 'Value') == 1
-        if isfield(ImDOrMD,'MD')
-            MD = MovieData.load([pathname filename]);
-        elseif isfield(ImDOrMD,'ImD')
-            ImD = ImageData.load([pathname filename]);
-        end
+        MD = MovieData.load([pathname filename]);
     else
-        if isfield(ImDOrMD,'MD')
-            MD = MovieData.loadMatFile([pathname filename]);
-        elseif isfield(ImDOrMD,'ImD')
-            ImD = ImageData.loadMatFile([pathname filename]);
-        end
+        MD = MovieData.loadMatFile([pathname filename]);
     end
-    if isfield(ImDOrMD,'MD')
-        userData.MD = horzcat(userData.MD, MD);
-    elseif isfield(ImDOrMD,'ImD')
-        userData.ImD = horzcat(userData.ImD, ImD);
-    end
+    userData.MD = horzcat(userData.MD, MD);
 catch ME
-    msg = sprintf('Movie or Image: %s\n\nError: %s\n\nMovie/Image is not successfully loaded. Please refer to movie/image detail and adjust your data.', [pathname filename],ME.message);
-    errordlg(msg, 'Movie/Image error','modal');
+    msg = sprintf('Movie: %s\n\nError: %s\n\nMovie is not successfully loaded. Please refer to movie detail and adjust your data.', [pathname filename],ME.message);
+    errordlg(msg, 'Movie error','modal');
     return
 end
 
@@ -491,7 +444,6 @@ if strcmpi('no', user_response), return; end
 % Delete movies and movie lists
 userData.MD = MovieData.empty(1,0);
 userData.ML = MovieList.empty(1,0);
-userData.ImD = ImageData.empty(1,0);
 set(handles.figure1, 'Userdata', userData)
 refreshDisplay(hObject, eventdata, handles)
 guidata(hObject, handles);
@@ -588,25 +540,7 @@ function refreshDisplay(hObject, eventdata, handles)
 
 userData = get(handles.figure1,'UserData');
 
-% Display Movie or Images information
-if ~isempty(userData.ImD)
-    if ~isempty(userData.MD)
-        msg = sprintf('Both movie and images are loaded! Please only load one type of data!');
-        errordlg(msg, 'Movie/Image error','modal');
-        return
-    else
-        imagePaths = arrayfun(@getFullPath,userData.ImD,'Unif',false);
-        nImageData= numel(userData.ImD);
-        iImageData = get(handles.listbox_movie, 'Value');
-        if isempty(userData.ImD),
-            iImageData=0;
-        else
-            iImageData=max(1,min(iImageData,nImageData));
-        end
-        set(handles.listbox_movie,'String',imagePaths,'Value',iImageData);
-        set(handles.text_movies, 'String', sprintf('%g/%g movie(s)/images',iImageData,nImageData))
-    end
-else
+% Display Movie information
 moviePaths = arrayfun(@getFullPath,userData.MD,'Unif',false);
 nMovies= numel(userData.MD);
 iMovie = get(handles.listbox_movie, 'Value');
@@ -616,8 +550,7 @@ else
     iMovie=max(1,min(iMovie,nMovies));
 end
 set(handles.listbox_movie,'String',moviePaths,'Value',iMovie);
-set(handles.text_movies, 'String', sprintf('%g/%g movie(s)/images',iMovie,nMovies))
-end
+set(handles.text_movies, 'String', sprintf('%g/%g movie(s)',iMovie,nMovies))
 
 % Display list information
 listPaths = arrayfun(@getFullPath,userData.ML,'Unif',false);
@@ -699,11 +632,7 @@ props=get(handles.listbox_movie, {'String','Value'});
 if isempty(props{1}), return; end
 
 userData = get(handles.figure1, 'UserData');
-if ~isempty(userData.MD) && isempty(userData.ImD)
 movieViewer(userData.MD(props{2}));
-elseif isempty(userData.MD) && ~isempty(userData.ImD)
-    imageDataViewer(userData.ImD(props{2}));
-end
 
 
 % --------------------------------------------------------------------

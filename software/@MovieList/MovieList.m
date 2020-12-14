@@ -307,6 +307,6 @@ classdef MovieList < MovieObject
         end
         
         % Use Regular expression to build a movie list by scanning dirs
-        ML = buildByRegexp(filter,outputDirectory,findMatsInDirs);
+        ML = buildByRegexp(filter,outputDirectory);
     end
 end
