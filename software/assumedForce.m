@@ -13,7 +13,7 @@ end
 %     force=(heaviside(1-(x.^2+y.^2)).*(exp(-(x.^2+y.^2))-1/exp(1)));
 % end
 %
-% Copyright (C) 2020, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2021, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

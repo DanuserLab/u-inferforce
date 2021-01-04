@@ -22,7 +22,7 @@ function [x_lambda,rho,eta] = tikhonov(U,s,V,b,lambda,x_0)
 % The solution norm (standard-form case) or seminorm (general-form
 % case) and the residual norm are returned in eta and rho.
 %
-% Copyright (C) 2020, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2021, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

@@ -11,7 +11,7 @@
 % Output:
 %        sigma : lower bound of standard deviation of the Gaussian PSF estimated from point sources in input data
 %
-% Copyright (C) 2020, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2021, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

@@ -2,7 +2,7 @@ function [p,t,dt,xNew,yNew,isSq]=delaunaySqLattice(xvec,yvec)
 % first check if the given vectors are really representing a square
 % lattice:
 %
-% Copyright (C) 2020, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2021, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

@@ -3,7 +3,7 @@ function [f,df] = vFun(v,pp,dpp1,dpp2)
 f  = -fnval(pp,v.');
 df = -[fnval(dpp1,v.') fnval(dpp2,v.')];
 %
-% Copyright (C) 2020, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2021, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 
