@@ -9,7 +9,7 @@ function [displField] = filterDisplacementField( orgDisplacementField, mask)
 % Sangyoon Han April 2013
     % Get whole frame number
 %
-% Copyright (C) 2021, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2022, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

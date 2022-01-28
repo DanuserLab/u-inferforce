@@ -12,7 +12,7 @@ function y=odd(x);
 % 
 %	See also ROUND, CEIL, FIX, FLOOR.
 %
-% Copyright (C) 2021, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2022, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

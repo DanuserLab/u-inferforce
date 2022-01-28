@@ -30,7 +30,7 @@ function [k_corner,info] = corner(rho,eta,fig)
 % If a third input argument is present, then a figure will show the discrete
 % L-curve in log-log scale and also indicate the found corner.
 %
-% Copyright (C) 2021, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2022, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

@@ -7,7 +7,7 @@ if nargin < 5 || isempty(method) || strcmp(method,'new')
     % same triangulation as we started with. Otherwise there might arise
     % problems at the boundary, see below.
 %
-% Copyright (C) 2021, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2022, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

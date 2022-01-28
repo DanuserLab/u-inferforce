@@ -16,7 +16,7 @@ function [fx, fy, x_out, y_out, M, pos_u, u, sol_coef, sol_mats] = ...
 % Achim Besser 2011
 % Sangyoon Han 2013
 %
-% Copyright (C) 2021, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2022, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

@@ -128,7 +128,7 @@ function [exIm1,exIm2,pivData] = pivInterrogate(im1,im2,pivData,pivPar)
 %    sm ... smoothing
 %    Word "velocity" should be understood as "displacement"
 %
-% Copyright (C) 2021, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2022, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

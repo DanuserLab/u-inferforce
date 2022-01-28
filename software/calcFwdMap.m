@@ -31,7 +31,7 @@ parfor j=baseSpan
     %limits for integration: integrate base function only over their
     %respective support:
 %
-% Copyright (C) 2021, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2022, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

@@ -12,7 +12,7 @@ function [G]=finiteThicknessGreens(i,j,x,y,E,h)
 %             A2B = - (1+v)*v/(2*pi*E*r)
 % Sangyoon Han April 2013
 %
-% Copyright (C) 2021, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2022, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 
