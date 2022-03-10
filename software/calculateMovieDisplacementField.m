@@ -212,7 +212,7 @@ for j= firstFrame:nFrames
             % Adaptation of psfSigma from bead channel image data
             poolobj = gcp('nocreate'); % If no pool, do not create new one.
             if isempty(poolobj)
-                poolsize = feature('numCores');
+                poolsize = str2double(getenv('NUMBER_OF_PROCESSORS')) - 1;          % Modified by Waddah Moghram on 12/10/2018 and is better to get all cores when hyperthreading is enabled
             else
                 poolsize = poolobj.NumWorkers;
             end
