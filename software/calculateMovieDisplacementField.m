@@ -445,15 +445,16 @@ for j= firstFrame:nFrames
 
         [pivData] = pivAnalyzeImagePair(refFrame,currImage,pivData,pivPar);
         validV = ~isnan(pivData.V);
-        
+
+        %------ Modified by Waddah I Moghram on 4/7/2019. Added (validV)
         if ~p.trackSuccessively
             displField(j).pos=[pivData.X(validV), pivData.Y(validV)];
             displField(j).vec=[pivData.U(validV)+residualT(j,2), pivData.V(validV)+residualT(j,1)]; % residual should be added with oppiste order! -SH 072514
         else
-            v2 = [pivData.U, pivData.V];
+            v2 = [pivData.U(validV), pivData.V(validV)];                                            % Added validV by WIM on 4/7/2019
             if j== firstFrame
-                cumulativeV_forV = zeros(size(pivData.U,1),2);
-                cumulativeV_forBeads = zeros(size(pivData.U,1),2);
+                cumulativeV_forV = zeros(size(pivData.U(validV),1),2);                              % Added validV by WIM on 4/7/2019
+                cumulativeV_forBeads = zeros(size(pivData.X(validV),1),2);                          % Added validV by WIM on 4/7/2019
             else
                 cumulativeV_forV = cumulativeV_forV+v2;
                 v2(~validV,1)=0; v2(~validV,2)=0;
@@ -462,8 +463,11 @@ for j= firstFrame:nFrames
             currentBeads = [pivData.X(validV), pivData.Y(validV)] + cumulativeV_forBeads;
             displField(j).pos=[pivData.X(validV), pivData.Y(validV)];
             displField(j).vec=[cumulativeV_forV(validV,1)+residualT(j,2) cumulativeV_forV(validV,2)+residualT(j,1)]; % residual should be added with oppiste order! -SH 072514
+            
+            prevImage=currImage;   % added by WIM on 4/7/2019 to track frames successively.
         end
-
+        %------------------------
+        
 %         % testing additional pass of piv processing
 %         pivPar.iaSizeX=[ 8];
 %         pivPar.iaStepX=[ 4];
