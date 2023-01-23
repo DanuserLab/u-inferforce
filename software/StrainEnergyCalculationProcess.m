@@ -3,7 +3,7 @@ classdef StrainEnergyCalculationProcess < DataProcessingProcess
     %
     % Sangyoon Han & Andrew Jamieson, May 2017
 %
-% Copyright (C) 2022, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2023, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

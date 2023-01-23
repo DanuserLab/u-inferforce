@@ -2,7 +2,7 @@ function [pos_f,force,forceMesh,M,pos_u,u,sol_coef,sol_mats]=...
     reg_FastBEM_TFM(grid_mat, displField, frame, yModu_Pa, pRatio, regParam, varargin)
 % Synopsis [pos_f force forceMesh M pos_u u sol_coef sol_mats]=reg_FastBEM_TFM(grid_mat, displField, frame, yModu_Pa, pRatio, regParam, meshPtsFwdSol, solMethodBEM,varargin)
 %
-% Copyright (C) 2022, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2023, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

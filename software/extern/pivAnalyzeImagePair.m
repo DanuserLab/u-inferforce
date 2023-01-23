@@ -208,7 +208,7 @@ function [pivData,ccFunction] = pivAnalyzeImagePair(im1,im2,pivData,pivParIn)
 %    Word "velocity" should be understood as "displacement"
 %%
 %
-% Copyright (C) 2022, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2023, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

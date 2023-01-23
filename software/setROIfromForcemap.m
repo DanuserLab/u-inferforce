@@ -3,7 +3,7 @@ function [] = setROIfromForcemap(MD)
 % your BEM (L1 or L2) force reconstruction. FTTC should've been processed
 % before selecting this function:
 %
-% Copyright (C) 2022, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2023, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

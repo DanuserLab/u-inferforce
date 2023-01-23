@@ -23,7 +23,7 @@ function [reg_corner,ireg_corner,kappa,h]=regParamSelecetionLcurve(rho,eta,lambd
 %   ireg_corner - the index of the value in reg_param with maximum curvature
 %   kappa       - the curvature for each reg_param
 %
-% Copyright (C) 2022, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2023, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

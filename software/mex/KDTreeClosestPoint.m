@@ -22,7 +22,7 @@
 %   distance between the closest input point and the n-th query point.
 %
 %
-% Copyright (C) 2022, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2023, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 
