@@ -7,8 +7,8 @@ TFM (Traction Force Microscopy) is a MATLAB software that reconstructs traction 
 The innovative parts of the reconstruction algorithms are published in [Han et al., Nature Methods (2015)](http://www.nature.com/nmeth/journal/v12/n7/full/nmeth.3430.html)
 
 ----------------------
-[Danuser Lab Website](https://www.utsouthwestern.edu/labs/danuser/)
+[Danuser Lab Website](https://www.danuserlab-utsw.org/)
 
-[Software Links](https://www.utsouthwestern.edu/labs/danuser/software/)
+[Software Links](https://github.com/DanuserLab/)
 
 [Han Lab](https://sites.google.com/mtu.edu/hanlab/)
