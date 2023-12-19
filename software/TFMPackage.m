@@ -66,7 +66,7 @@ classdef TFMPackage < Package
     
     methods (Static)
         function name = getName()
-            name = 'Traction Force Microscopy';
+            name = 'u-inferforce';  % Updated 2023-12-18. The old name was Traction Force Microscopy
         end
         
         function m = getDependencyMatrix(i,j)
