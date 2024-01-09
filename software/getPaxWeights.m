@@ -7,7 +7,7 @@ function paxWeights = getPaxWeights(forceMesh,paxImage,x_vec,y_vec,ux_vec,uy_vec
 % nodes, the distance to the signal will proportionally reduce the effect.
 % Again, 1 for highest paxillin signal, 100 for no signal
 %
-% Copyright (C) 2023, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

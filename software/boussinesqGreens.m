@@ -1,6 +1,6 @@
 %This Greensfunction is only valid for v=0.5 if not specified;
 %
-% Copyright (C) 2023, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

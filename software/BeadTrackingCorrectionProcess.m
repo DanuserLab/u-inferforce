@@ -4,7 +4,7 @@ classdef BeadTrackingCorrectionProcess < StageDriftCorrectionProcess
     % Sebastien Besson, Sep 2011
     % Andrew R. Jamieson Feb. 2017
 %
-% Copyright (C) 2023, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

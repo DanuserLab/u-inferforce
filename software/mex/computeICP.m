@@ -25,7 +25,7 @@ function [T R] = computeICP(X1, X2, numIter, tol) %#ok<STOUT,INUSD>
 %
 % Sylvain Berlemont, Dec 2009
 %
-% Copyright (C) 2023, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

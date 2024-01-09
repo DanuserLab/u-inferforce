@@ -1,7 +1,7 @@
 classdef TFMPackage < Package
     % Main class of the TFM package
 %
-% Copyright (C) 2023, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

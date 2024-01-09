@@ -1,7 +1,7 @@
 function [pivDataOut] = pivCorrector(pivData,pivData0,pivPar)
 % pivCorrector - correct the changes to the velocity field for attenuation
 %
-% Copyright (C) 2023, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 
