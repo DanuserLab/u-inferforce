@@ -311,7 +311,7 @@ for i = 1:numel(p.ChannelIndex)
             % Apply subpixel-wise registration to other channels
              Tr = maketform('affine', [1 0 0; 0 1 0; fliplr(T(j, :)) 1]);
         end
-        I = padarray(double(movieData.channels_(iChan).loadImage(j)), [maxY, maxX]);
+        I = double(movieData.channels_(iChan).loadImage(j));
         try
             I2 = imwarp(I, Tr);%, 'XData',[1 size(I, 2)],'YData', [1 size(I, 1)]);
         catch
