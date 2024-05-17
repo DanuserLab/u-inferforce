@@ -89,6 +89,10 @@ classdef  MovieObject < hgsetget
                     if any(cellfun(@(x)strcmp(x,[class(obj) '.relocate']),{stack.name})),
                         status  = true;
                     end
+            %------ Added by Waddah Moghram on 3/7/2019
+                case {'roiMaskPath_'}
+                    status = true;
+            %%----------------
             end
         end
         
