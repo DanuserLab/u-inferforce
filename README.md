@@ -1,4 +1,5 @@
 # u-inferforce
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11211836.svg)](https://doi.org/10.5281/zenodo.11211836)
 
 ![Alt Text](img/TFMThumbnail.jpg?raw=true)
 
