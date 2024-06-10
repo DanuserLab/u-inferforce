@@ -140,7 +140,7 @@ if firstFrame == 1
     displField(nFrames)=struct('pos',[],'vec',[]);
 else
     % Load old displacement field structure 
-    displField=s.displField;
+    displField=sDisp.displField;
 end
 
 displFieldProc.setOutFilePaths(outputFile);
