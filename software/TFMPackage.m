@@ -37,7 +37,7 @@ classdef TFMPackage < Package
                 outputDir = ip.Results.outputDir;
                 
                 super_args{1} = owner;
-                super_args{2} = [outputDir  filesep 'TFMPackage'];
+                super_args{2} = [outputDir  filesep 'uInferforcePackage']; % Updated 2024-9-3. The old save folder name was TFMPackage
             end
             
             % Call the superclass constructor

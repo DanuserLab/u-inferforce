@@ -23,6 +23,11 @@ function efficientSubPixelRegistration(movieData, varargin)
 %
 % Andrew R. Jamieson Feb. 2017
 %
+%
+% Bug fixed: Before, the beads channel has to be 1st in raw movie and needs to be selected as 1st channel in this process. 
+% Now, beads channel do not have to be 1st in raw movie, but still needs to be selected as 1st channel in this process.
+% By Qiongjing (Jenny) Zou, Aug 28, 2024
+%
 % Copyright (C) 2024, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
@@ -170,7 +175,8 @@ for frame_num = 1:nFrames
    disp(['x shift: ' num2str(DFTout(frame_num).row_shift)]);
    disp(['y shift: ' num2str(DFTout(frame_num).col_shift)]);
    I_beads = abs(ifft2(Greg_beads));
-   imwrite(uint16(I_beads), outFile(1, frame_num));
+   % imwrite(uint16(I_beads), outFile(1, frame_num)); % before the beads channel has to be 1st in raw movie
+   imwrite(uint16(I_beads), outFile(p.ChannelIndex(1,1), frame_num)); % Bug fix 2024-8-28, beads channel do not have to be 1st in raw movie, but still needs to be selected as 1st in this process.
 
    % Apply transform to each selected channel
    for i = 2:numel(p.ChannelIndex)
