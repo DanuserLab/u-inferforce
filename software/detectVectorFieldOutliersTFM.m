@@ -135,13 +135,19 @@ distance2(idxBeadsEnoughNeis>1)=cellfun(@(x) x(2),distance(idxBeadsEnoughNeis>1)
 % elseif n==1 && fitError
 %     threshDist = 2*mean(distance2);
 % end
+
+% ----------- DeBugged by Waddah Moghram on 4/27/2019
 threshDist = nanmean(distance2)+2*nanstd(distance2);
-idxCloseVectors = distance2<threshDist & ~isnan(distance2);
-neighborhood_distance = 5*max(distance2(idxCloseVectors));%quantile(distance,0.95);%mean(distance);%size(refFrame,1)*size(refFrame,2)/length(beads);
-idAwayVectors = distance2>neighborhood_distance | isnan(distance2);
-idxCloseEnoughVectors = distance2<neighborhood_distance & ~isnan(distance2);
+idxCloseVectors = (distance2 < threshDist) & ~isnan(distance2);                      
+neighborhood_distance = 5*max(distance2(idxCloseVectors));                           %quantile(distance,0.95);%mean(distance);%size(refFrame,1)*size(refFrame,2)/length(beads); 
+if isempty(neighborhood_distance)
+   neighborhood_distance = 0;
+end
+idAwayVectors = (distance2>neighborhood_distance) | isnan(distance2);
+idxCloseEnoughVectors = (distance2<neighborhood_distance) & ~isnan(distance2);          % Fixed by Waddah Moghram on 4/26/2019. added parantheses
 dataFiltered = dataU(idxCloseEnoughVectors,:);
 idCloseEnoughVectors = find(idxCloseEnoughVectors);
+%------------------------------------
 
 % Find neighbors and distances
 % [idx,neiDist] = KDTreeBallQuery(data(:,1:2), data(:,1:2), neighborhood_distance);
