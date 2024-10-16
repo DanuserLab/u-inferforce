@@ -69,7 +69,7 @@ end
 if ~ischar(oldPath),return; end
 % Check the old root directory is contained within the old path
 nElements = min(numel(oldPath),numel(oldRootDir));
-if isempty(oldRootDir) && ~strcmp(oldPath(1:nElements),oldRootDir), return; end %changes made to account for empty root directory -Sangyoon Han 160601
+if ~isempty(oldRootDir) && ~strcmp(oldPath(1:nElements),oldRootDir), return; end %changes made to account for empty root directory -Sangyoon Han 160601
 
 
 % Get file separators of old and new root directories as regular
