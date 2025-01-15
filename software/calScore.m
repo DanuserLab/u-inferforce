@@ -4,7 +4,7 @@ function [score,blockIsTooSmall,vP,vF] = calScore(kym,centerI,corL,vP,vF,varargi
 % tracking. The first slice of kym contains the reference frame and the
 % second one has the current bead image.
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

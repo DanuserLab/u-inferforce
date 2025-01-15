@@ -54,7 +54,7 @@ function [v,corLength,sigtValues] = trackStackFlow(stack,points,minCorL,varargin
 % References:
 % J. Li & G. Danuser, J. of microscopy, 220 150-167, 2005.
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

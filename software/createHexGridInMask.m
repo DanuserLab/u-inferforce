@@ -3,7 +3,7 @@ function [xvec,yvec]=createHexGridInMask(spacing,bgdMask)
 % pixel).
 % Sangyoon Han June 2013
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

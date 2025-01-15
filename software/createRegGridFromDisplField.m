@@ -8,7 +8,7 @@ function [reg_grid,xvec,yvec,gridSpacing]=createRegGridFromDisplField(displField
 % place the regular grid centered to the orignal bounds. Thereby make sure 
 % that the edges have been eroded to a certain extend.
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

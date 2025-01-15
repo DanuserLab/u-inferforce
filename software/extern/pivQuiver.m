@@ -113,7 +113,7 @@ function pivQuiver(pivData,varargin)
 %        'timeSlice',10,'quiver','lineSpec','-y',) ... show mean velocity magnitude and two instantaneous
 %            velocity fields at different times, by black and yellow vector
 %
-% Copyright (C) 2024, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 
