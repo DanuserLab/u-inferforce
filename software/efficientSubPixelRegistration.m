@@ -28,7 +28,7 @@ function efficientSubPixelRegistration(movieData, varargin)
 % Now, beads channel do not have to be 1st in raw movie, but still needs to be selected as 1st channel in this process.
 % By Qiongjing (Jenny) Zou, Aug 28, 2024
 %
-% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2026, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

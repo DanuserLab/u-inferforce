@@ -3,7 +3,7 @@ function [myMesh]=createMeshAndBasisFromAdhesions(x_vec,y_vec,paxImage,displFiel
 % paxImage. x_vec and y_vec serve as mask for mesh nodes.
 % Sangyoon Han June 2013
 %
-% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2026, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

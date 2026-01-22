@@ -6,7 +6,7 @@ function points = spleval(f)
 % Computes points on the given spline or spline curve f between
 % its extreme breaks.
 %
-% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2026, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

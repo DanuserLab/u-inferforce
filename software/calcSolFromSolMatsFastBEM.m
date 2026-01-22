@@ -1,7 +1,7 @@
 function [pos_f,force,sol_coef]=calcSolFromSolMatsFastBEM(M,sol_mats,x,y,ux,uy,forceMesh,L,x_out,y_out,varargin)
 % Input check
 %
-% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2026, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

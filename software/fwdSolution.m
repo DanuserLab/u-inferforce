@@ -5,7 +5,7 @@ function [ux,uy,x_grid,y_grid,meshPtsFwdSol]=fwdSolution(x0,y0,E,xmin,xmax,ymin,
 %        dimension of the surface stresses (force_x, force_y) must have the
 %        same dimension as the elastic modulus E, usually Pa.
 %
-% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2026, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 

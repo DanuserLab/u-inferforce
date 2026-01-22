@@ -140,7 +140,7 @@ function [z,s,exitflag] = smoothn(varargin)
 %   website: <a
 %   href="matlab:web('http://www.biomecardio.com')">www.BiomeCardio.com</a>
 %
-% Copyright (C) 2025, Danuser Lab - UTSouthwestern 
+% Copyright (C) 2026, Danuser Lab - UTSouthwestern 
 %
 % This file is part of TFM_Package.
 % 
